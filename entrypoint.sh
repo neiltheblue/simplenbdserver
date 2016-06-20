@@ -4,7 +4,15 @@ CMD=""
 
 while [ $1 ]
 do
-  CMD="${CMD} --imgfile $1"
+  case $1 in
+   --cow) CMD="--cow ${CMD}"
+   ;;
+   --readonly) CMD="--readonly ${CMD}"
+   ;;
+   *) CMD="${CMD} --imgfile $1"
+   ;;
+  esac
+  
   shift
 done
 
