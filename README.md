@@ -1,6 +1,6 @@
 # simplenbdserver
 
-Ubuntu based container exposes named network block devices
+Ubuntu based container exposes network block devices
 
 ## To run a server
 
