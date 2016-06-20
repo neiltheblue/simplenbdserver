@@ -1,19 +1,21 @@
 #!/bin/sh
 
-CMD=""
+TARGET="--target"
+OPT=""
+IMG=""
 
 while [ $1 ]
 do
   case $1 in
-   --cow) CMD="--cow ${CMD}"
+   --cow) TARGET="--cow-target"
    ;;
-   --readonly) CMD="--readonly ${CMD}"
+   --readonly) OPT="--readonly"
    ;;
-   *) CMD="${CMD} --imgfile $1"
+   *) IMG="$1"
    ;;
   esac
   
   shift
 done
 
-/usr/sbin/xnbd-wrapper ${CMD}
+/usr/sbin/xnbd-server "${TARGET} ${OPT} ${IMG}"
