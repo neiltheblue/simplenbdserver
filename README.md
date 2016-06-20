@@ -25,3 +25,4 @@ docker run -d \
 neiltheblue/simplenbdserver \
 /block/disk1.img /block/disk2.img
 ```
+The options may also include `--cow` to run in copy-on-write mode and `--readonly` to run in readonly mode.
